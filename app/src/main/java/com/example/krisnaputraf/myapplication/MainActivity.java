@@ -14,6 +14,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -34,12 +35,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             .build();
     GoogleMap m_map;
     boolean mapReady = false;
-    MarkerOptions kos;
-    MarkerOptions smkTelkom;
-    MarkerOptions roker;
-    MarkerOptions bakso;
-    MarkerOptions doeloer;
 
+   MarkerOptions kos,smkTelkom,roker,bakso,doeloer;
+   LatLng kosLtLg = new LatLng(-7.979316, 112.657870);
+   LatLng smkTelkomLtLg = new LatLng(-7.977164, 112.658760);
+   LatLng rokerLtLg = new LatLng(-7.9760753,112.6628679);
+   LatLng baksoLtLg = new LatLng(-7.979885, 112.657127);
+   LatLng doeloerLtLg = new LatLng(-7.9747464,112.6600879);
     @Override
     public Resources getResources() {
         return super.getResources();
@@ -111,6 +113,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         m_map.addMarker(roker);
         m_map.addMarker(bakso);
         m_map.addMarker(doeloer);
+        m_map.addPolyline(new PolylineOptions().geodesic(true)
+                 .add(kosLtLg)
+                 .add(baksoLtLg)
+                 .add(rokerLtLg)
+                 .add(doeloerLtLg)
+                 .add(smkTelkomLtLg)
+                 .add(kosLtLg)
+        );
         flyTo(SURABAYA);
     }
 
