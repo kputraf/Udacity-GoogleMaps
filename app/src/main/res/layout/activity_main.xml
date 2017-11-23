@@ -6,10 +6,17 @@
     android:orientation="vertical"
     tools:context="com.example.krisnaputraf.myapplication.MainActivity">
 
-    <LinearLayout
+     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSurabaya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Surabaya" />
 
         <Button
             android:id="@+id/btnSeattle"
@@ -25,18 +32,10 @@
             android:layout_weight="1"
             android:text="Tokyo" />
 
-        <Button
-            android:id="@+id/btnDublin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Dublin" />
-
-    </LinearLayout>
-
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.MapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+</LinearLayout>
 </LinearLayout>
